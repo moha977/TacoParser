@@ -56,16 +56,16 @@ namespace LoggingKata
                 var locA = locations[i];
                 // Create a new corA Coordinate with your locA's lat and long
                 var corA =  new GeoCoordinate();
-                corA.Latitude = locA.Location.Longitude;
-                corA.Longitude = locA.Location.Latitude;
+                corA.Latitude = locA.Location.Latitude;
+                corA.Longitude = locA.Location.Longitude;
                 // Now, do another loop on the locations with the scope of your first loop, so you can grab the "destination" location (perhaps: `locB`)
                 for (int j = 0; j < locations.Length; j++)
                 {
                     // Create a new Coordinate with your locB's lat and long
                     var locB = locations[j];
                     var corB = new GeoCoordinate();
-                    corB.Latitude = locB.Location.Longitude;
-                    corB.Longitude = locB.Location.Latitude;
+                    corB.Latitude = locB.Location.Latitude;
+                    corB.Longitude = locB.Location.Longitude;
                     // Now, compare the two using `.GetDistanceTo()`, which returns a double
                     // If the distance is greater than the currently saved distance, update the distance and the two `ITrackable` variables you set above
                     if (corA.GetDistanceTo(corB) > distance)
